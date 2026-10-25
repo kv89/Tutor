@@ -6,14 +6,24 @@ No packages, services or database are needed. Everything is local Markdown.
 
 ## Quick start
 
-Open a terminal in this folder and start one tool:
+1. Get the project and open a terminal in it:
 
 ```sh
-cd "/path/to/Tutor"
+git clone https://github.com/kv89/Tutor
+cd Tutor
+```
+
+2. Start one tool from this folder:
+
+```sh
 claude      # or: codex, opencode
 ```
 
-Then say what you want, for example `Teach me database indexes.` You do not need to restate the rules.
+3. Check it loaded the rules. Paste: `Before teaching, tell me which project instruction files you loaded and whether you will read TUTOR.md for a tutoring request. Do not edit files.` It should name `AGENTS.md` (Claude Code: `CLAUDE.md`) and say it will read `TUTOR.md`.
+
+4. Say what you want, for example `Teach me database indexes.` You do not need to restate the rules.
+
+To test the full loop (hints, full answer, saving, retrieval), run the five smoke tests in [evaluations/test-scenarios.md](evaluations/test-scenarios.md#smoke-tests).
 
 | Tool | How it finds the rules |
 |---|---|
