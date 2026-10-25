@@ -1,0 +1,8 @@
+.DS_Store
+
+# Personal tooling
+.serena/
+.claude/settings.json
+
+# Personal learning notes (category folders under knowledge/)
+knowledge/*/
