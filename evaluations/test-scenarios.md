@@ -23,8 +23,11 @@ Run these manually in Codex, Claude Code, and OpenCode. Use disposable prompt ex
 
 ## Tool loading and portability
 
-14. **Instruction and skill discovery:** In Codex, confirm project `AGENTS.md` is loaded and directs tutoring to `TUTOR.md`. In Claude Code and OpenCode, confirm the `technical-tutor` skill is discoverable. Activate tutoring and confirm `TUTOR.md` and only relevant knowledge files are read. Verify the Claude `CLAUDE.md` import and each tool's behavior in its running environment.
-15. **No infrastructure:** Confirm the workflows use local Markdown and available file tools, without packages, MCP, a database, or external services.
+14. **Instruction and skill discovery:** In Codex, confirm project `AGENTS.md` is loaded and directs tutoring to `plugin/skills/techtutor/TUTOR.md`. In Claude Code and OpenCode, confirm the `techtutor` skill is discoverable and starts with `/techtutor`. Activate tutoring and confirm `TUTOR.md` and only relevant knowledge files are read. Verify the Claude `CLAUDE.md` import and each tool's behavior in its running environment.
+15. **No infrastructure:** Confirm the workflows use Markdown and the file access the host provides, without installed packages, a database, or third-party services.
+16. **Project mode resume:** In a Claude.ai or ChatGPT Project with `tutor-library.md` in Project files, start a new chat with `Continue where I left off.` The tutor should read the resume note and continue from it.
+17. **Project mode save:** After a meaningful lesson in a Project, check that the tutor either edits `tutor-library.md` and reads it back, or hands over the complete file with "Not saved yet". Open the Project file to confirm which happened.
+18. **Desktop without file access:** In Claude Desktop with no folder connected, start a lesson. The tutor should say once how to connect a folder, then continue in Project or chat-only mode.
 
 ## Smoke tests
 

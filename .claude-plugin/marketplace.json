@@ -1,0 +1,14 @@
+{
+  "name": "kv89-tutor",
+  "description": "Portable technical tutor with a Markdown knowledge library",
+  "owner": {
+    "name": "kv89"
+  },
+  "plugins": [
+    {
+      "name": "techtutor",
+      "source": "./plugin",
+      "description": "Guided technical tutoring that saves concept notes and progress as Markdown. Start with /techtutor."
+    }
+  ]
+}

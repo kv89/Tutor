@@ -1,6 +1,53 @@
-# Knowledge library
+# Library format
 
-The library stores concise, reusable concept references rather than conversation transcripts. Markdown files are the source of truth. Create category directories only when their first concept is added.
+The library stores concise, reusable concept references rather than conversation transcripts. Markdown files are the source of truth. The same content has two layouts; `TUTOR.md` says which one to use.
+
+## Folder layout
+
+Used when the tutor can read and write files. Paths are relative to the library folder.
+
+| Path | Holds |
+|---|---|
+| `knowledge/index.md` | Index: one entry per concept |
+| `knowledge/progress.md` | Progress table and the resume note |
+| `knowledge/<category>/<id>.md` | One concept reference per file |
+| `review/revision-queue.md` | Revision queue |
+
+Create category directories only when their first concept is added. When creating a new folder library, start the three record files with the headings and empty tables shown in the single-file layout.
+
+## Single-file layout
+
+Used in Project mode and chat-only mode, where one file is easier to keep, download and replace. The file is named `tutor-library.md` and keeps these top-level sections in this order:
+
+```markdown
+# Tutor library
+
+## Resume
+Last session: YYYY-MM-DD — concept-id — one line on where the learner stopped.
+Next: the next useful step.
+
+## Index
+### Software engineering
+- `db-indexes` — Database indexes — index, B-tree, range scan
+
+## Progress
+| Concept | Status | Evidence or gap | Recurring misconception | Next review or exercise |
+|---|---|---|---|---|
+
+## Revision queue
+| Concept | Why revisit | Recall or application prompt | Review timing |
+|---|---|---|---|
+
+## Concepts
+### concept: db-indexes
+(the concept reference, with its headings demoted by two levels)
+```
+
+Each concept is one `### concept: <id>` block. Its frontmatter fields become a short `id / category / status / last_reviewed` line under that heading. Links between concepts use the ID instead of a path. To move between layouts, map each block to `knowledge/<category>/<id>.md` and back without changing content.
+
+## Resume note
+
+Both layouts keep a two-line resume note: in the folder layout at the top of `knowledge/progress.md`, in the single-file layout under `## Resume`. Update it at the end of each meaningful session. A new conversation reads it first to continue where the learner stopped.
 
 ## Categories
 
@@ -58,7 +105,7 @@ Do not fabricate dates, prerequisites, sources, evidence, or status. A date is t
 
 ## Index and progress maintenance
 
-`index.md` is the navigation map. Add one entry per concept with its stable ID, relative path, category, and useful search keywords; keep entries alphabetized within category. `progress.md` is a compact cross-concept view of learning status, evidence, recurring misconceptions, gaps, and next review. Detailed explanations belong in the concept reference, not progress records.
+The index is the navigation map. Add one entry per concept with its stable ID, relative path (folder layout only), category, and useful search keywords; keep entries alphabetized within category. Progress is a compact cross-concept view of learning status, evidence, recurring misconceptions, gaps, and next review. Detailed explanations belong in the concept reference, not progress records.
 
 Use only these states: **Introduced**, **Practising**, **Understood**, and **Demonstrated mastery**. See `TUTOR.md` for evidence thresholds. When evidence is absent, use Introduced or leave status unverified; do not promote status just because a session occurred.
 

@@ -1,0 +1,11 @@
+{
+  "name": "techtutor",
+  "displayName": "TechTutor",
+  "version": "0.1.0",
+  "description": "Guided technical tutoring that saves concept notes and progress as Markdown. Start with /techtutor.",
+  "author": {
+    "name": "kv89"
+  },
+  "repository": "https://github.com/kv89/Tutor",
+  "keywords": ["tutor", "learning", "knowledge-library"]
+}
